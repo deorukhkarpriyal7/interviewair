@@ -1,0 +1,50 @@
+package interviewair;
+
+import java.io.*; 
+import java.util.Iterator;
+
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+
+public class read_write_data_from_excel_sheet {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+		FileInputStream InputFileName = new FileInputStream("E:\\testexcelfile.xlsx");
+		FileOutputStream OutputFileName = new FileOutputStream("E:\\testexcelfileforoutput.xlsx");
+		XSSFWorkbook inputworkbook = new XSSFWorkbook(InputFileName);
+		
+		XSSFSheet inputsheet = inputworkbook.getSheet("Sheet1");
+		
+		XSSFRow row;
+		XSSFCell cell;
+		
+		Iterator rows = inputsheet.rowIterator();
+		
+		while(rows.hasNext()){
+			row = (XSSFRow) rows.next();
+			
+			Iterator cells = row.cellIterator();
+			while(cells.hasNext()){
+				cell = (XSSFCell) cells.next();
+				//System.out.println(cell);
+				if((cell.getCellTypeEnum()) == CellType.STRING){
+					System.out.println(cell.getStringCellValue());
+				}
+			}
+			
+		}
+		System.out.println();
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+} 

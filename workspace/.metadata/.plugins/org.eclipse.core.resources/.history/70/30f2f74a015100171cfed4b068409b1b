@@ -1,0 +1,10 @@
+package interviewair;
+
+public class file_input_output_with_BufferedReader {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

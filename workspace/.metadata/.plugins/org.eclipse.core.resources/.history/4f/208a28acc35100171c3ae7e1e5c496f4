@@ -1,0 +1,68 @@
+package interviewair;
+
+import java.io.*; 
+import java.util.Iterator;
+
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+
+public class read_write_data_from_excel_sheet {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+		FileInputStream InputFileName = new FileInputStream("E:\\testexcelfile.xlsx");
+		FileOutputStream OutputFileName = new FileOutputStream("E:\\testexcelfileforoutput.xlsx",true);
+		XSSFWorkbook inputworkbook = new XSSFWorkbook(InputFileName);
+		XSSFWorkbook outputworkbook = new XSSFWorkbook();
+		
+		XSSFSheet inputsheet = inputworkbook.getSheet("Sheet1");
+		XSSFSheet outputsheet = outputworkbook.createSheet("Sheet1");
+		
+		XSSFRow row;
+		XSSFCell cell;
+		
+		Iterator rows = inputsheet.rowIterator();
+		
+		while(rows.hasNext()){
+			row = (XSSFRow) rows.next();
+			System.out.println("count = "+outputsheet.getPhysicalNumberOfRows());
+			XSSFRow outputrow = outputsheet.createRow(outputsheet.getPhysicalNumberOfRows());
+			
+			Iterator cells = row.cellIterator();
+			
+			int cellcount = 0;
+			
+			while(cells.hasNext()){
+				cell = (XSSFCell) cells.next();
+				//System.out.println(cell);
+				
+				XSSFCell outputcell = outputrow.createCell(cellcount++);
+				
+				if((cell.getCellTypeEnum()) == CellType.STRING){
+					System.out.println(cell.getStringCellValue());
+					
+					outputcell.setCellValue(cell.getStringCellValue());
+					System.out.println("cell count = "+cellcount+" output cell value= "+outputcell);
+					System.out.println(outputworkbook);
+					outputworkbook.write(OutputFileName);
+				}
+				
+			}
+			
+		}
+		System.out.println();
+		InputFileName.close();
+		OutputFileName.close();
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+} 

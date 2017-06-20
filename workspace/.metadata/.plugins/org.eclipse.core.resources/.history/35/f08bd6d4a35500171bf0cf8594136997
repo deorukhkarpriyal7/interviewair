@@ -1,0 +1,9 @@
+package login_logout;
+
+import org.testng.annotations.Test;
+
+public class NewTest_from_guru99 {
+  @Test
+  public void f() {
+  }
+}

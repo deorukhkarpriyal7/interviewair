@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="68583" started-at="2017-06-20T10:58:01Z" finished-at="2017-06-20T10:59:09Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="68583" started-at="2017-06-20T10:58:01Z" finished-at="2017-06-20T10:59:09Z">
+      <class name="login_logout.candidate_login_logout">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:login_logout.candidate_login_logout@d62f43]" name="setUp" is-config="true" duration-ms="8369" started-at="2017-06-20T16:28:18Z" finished-at="2017-06-20T16:28:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testCandidateLoginLogoutTestng()[pri:0, instance:login_logout.candidate_login_logout@d62f43]" name="testCandidateLoginLogoutTestng" duration-ms="41507" started-at="2017-06-20T16:28:26Z" finished-at="2017-06-20T16:29:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCandidateLoginLogoutTestng -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:login_logout.candidate_login_logout@d62f43]" name="tearDown" is-config="true" duration-ms="1046" started-at="2017-06-20T16:29:08Z" finished-at="2017-06-20T16:29:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- login_logout.candidate_login_logout -->
+      <class name="login_logout.NewTest_from_guru99">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:login_logout.NewTest_from_guru99@41eaa2]" name="beforeTest" is-config="true" duration-ms="8283" started-at="2017-06-20T16:28:01Z" finished-at="2017-06-20T16:28:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="testEasy()[pri:0, instance:login_logout.NewTest_from_guru99@41eaa2]" name="testEasy" duration-ms="8901" started-at="2017-06-20T16:28:09Z" finished-at="2017-06-20T16:28:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEasy -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:login_logout.NewTest_from_guru99@41eaa2]" name="afterTest" is-config="true" duration-ms="432" started-at="2017-06-20T16:29:09Z" finished-at="2017-06-20T16:29:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- login_logout.NewTest_from_guru99 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

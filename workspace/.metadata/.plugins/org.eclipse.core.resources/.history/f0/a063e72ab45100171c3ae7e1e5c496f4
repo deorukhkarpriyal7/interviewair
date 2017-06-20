@@ -1,0 +1,54 @@
+package interviewair;
+
+import java.io.*; 
+import java.util.Iterator;
+
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+
+public class read_write_data_from_excel_sheet {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+		FileInputStream FileName = new FileInputStream("E:\\testexcelfile.xlsx");
+		XSSFWorkbook workbook = new XSSFWorkbook(FileName);
+		
+		XSSFSheet sheet = workbook.getSheet("Sheet1");
+		
+		XSSFRow row;
+		XSSFCell cell;
+		
+		Iterator rows = sheet.rowIterator();
+		
+		while(rows.hasNext()){
+			row = (XSSFRow) rows.next();
+			
+			Iterator cells = row.cellIterator();
+			while(cells.hasNext()){
+				cell = (XSSFCell) cells.next();
+				//System.out.println(cell);
+				if((cell.getCellTypeEnum()) == CellType.STRING){
+					System.out.println(cell.getStringCellValue());
+					System.out.println("hello");
+				}
+				else if((cell.getCellTypeEnum()) == CellType.NUMERIC){
+					System.out.println(cell.getDateCellValue());
+				}
+
+			}
+			
+		}
+		System.out.println();
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+} 

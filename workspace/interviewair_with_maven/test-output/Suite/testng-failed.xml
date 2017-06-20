@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test name="Test(failed)">
+    <classes>
+      <class name="login_logout.candidate_login_logout">
+        <methods>
+          <include name="tearDown"/>
+          <include name="testCandidateLoginLogoutTestng"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- login_logout.candidate_login_logout -->
+      <class name="login_logout.NewTest_from_guru99">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- login_logout.NewTest_from_guru99 -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

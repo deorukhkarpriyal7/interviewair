@@ -1,0 +1,9 @@
+package login_logout;
+
+import org.testng.annotations.Test;
+
+public class candidate_login_logout {
+  @Test
+  public void f() {
+  }
+}
